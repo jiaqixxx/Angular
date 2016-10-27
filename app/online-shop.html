@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="shop">
+<head>
+    <meta charset="UTF-8">
+    <title>Online-Shop</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body ng-controller="StoreController as store" class="list-group">
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="#">Brand</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="online-shop.html">Shop</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="product in store.products">
+                <h3>
+                    {{product.name}}
+                    <em class="pull-right">{{product.price | currency}}</em>
+                    <img ng-src="{{product.images[0].full}}" class="img-thumbnail center-block">
+                </h3>
+                <product-tabs></product-tabs>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="product.js"></script>
+</body>
+</html>
